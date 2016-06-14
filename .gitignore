@@ -1,0 +1,8 @@
+.vagrant
+Berksfile.lock
+.golang
+src
+pkg
+bin
+*.img
+coverage.out

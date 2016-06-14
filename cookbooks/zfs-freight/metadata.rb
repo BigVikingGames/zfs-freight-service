@@ -1,0 +1,12 @@
+name 'zfs-freight'
+maintainer 'Jonathon W. Marshall'
+maintainer_email 'jmarshall@bigvikinggames.com'
+license 'all_rights'
+description 'Installs/Configures zfs-freight'
+long_description 'Installs/Configures zfs-freight'
+version '0.1.0'
+
+depends 'zfs_linux',       '~> 2.1.0'
+depends 'chef-apt-docker', '~> 1.0.0'
+depends 'docker',          '~> 2.7.0'
+depends 'dnsmasq',         '~> 0.2.0'
