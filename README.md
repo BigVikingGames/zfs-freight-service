@@ -1,7 +1,7 @@
 # ZFS Freight Service
 
-_ZFS Freight Service_ is a Docker volume plugin that allows you to create and mount persistent ZFS volumes. It is
-based heavily off [CWSpear/local-persist](https://github.com/CWSpear/local-persist) and currently 
+__ZFS Freight Service__ is a Docker volume plugin that allows you to create and mount persistent ZFS volumes. It is
+based heavily off [CWSpear/local-persist](https://github.com/CWSpear/local-persist) and currently
 only supports single nodes. Basic implementation of the volume API should be complete. The eventual goal is to provide a robust ZFS-based volume manager for Docker clusters.
 
 ## Install
@@ -9,7 +9,7 @@ only supports single nodes. Basic implementation of the volume API should be com
 ```
 $ make binary
 $ export FREIGHT_ZPOOL=your-pool
-$ sudo ./bin/zfs-freight &
+$ sudo -E ./bin/zfs-freight &
 ```
 
 ## Configuration
