@@ -34,5 +34,5 @@ before_script:
   - sudo ./bin/zfs-freight &
 
 script:
-  - sudo -E make test
+  - sudo -E su root -c 'make test'
 
