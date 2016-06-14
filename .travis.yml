@@ -28,13 +28,9 @@ install:
   - go get -v -d
 
 before_script:
-  - whoami
   - docker version
   - make binary
-  - chmod +x bin/zfs-freight
-  - sudo ./bin/zfs-freight &
-  - sudo -E bash -c 'export'
 
 script:
-  - sudo -E su root -c 'make test'
+  - PATH=$HOME/gopath/bin:$PATH sudo -E bash -c "make test"
 
