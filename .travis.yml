@@ -32,5 +32,5 @@ before_script:
   - make binary
 
 script:
-  - PATH=$HOME/gopath/bin:$PATH sudo -E bash -c "make test"
+  - sudo -E bash -c "PATH=$HOME/gopath/bin:$PATH GOPATH=/home/travis/gopath make test"
 
