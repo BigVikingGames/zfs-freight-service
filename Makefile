@@ -21,13 +21,15 @@ clean-test:
 	zpool destroy test || true
 	rm $(CURDIR)/test.img || true
 
+clean-bin:
+	rm -Rf bin
+
 binary: clean-bin
-	$(GO) build -o bin/$(BIN_NAME) -v
+	mkdir bin
+	$(GO) get -v ./
+	$(GO) build -x -o bin/$(BIN_NAME) -v
 	chmod +x bin/$(BIN_NAME)
 
 release: binary
 	sha384sum bin/$(BIN_NAME)
 	tar -czf $(BIN_NAME).tar.gz bin/$(BIN_NAME)
-
-clean-bin:
-	rm -Rf bin
