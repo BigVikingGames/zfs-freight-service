@@ -1,6 +1,9 @@
 BIN_NAME=zfs-freight
 GO=$(shell which go)
 
+debug:
+	@echo $(GO)
+
 test: clean-test
 	dd if=/dev/zero of=$(CURDIR)/test.img bs=1 count=0 seek=2G
 	zpool create test $(CURDIR)/test.img
@@ -17,6 +20,11 @@ clean-test:
 
 binary: clean-bin
 	$(GO) build -o bin/$(BIN_NAME) -v
+	chmod +x o bin/$(BIN_NAME)
+
+release: binary
+	sha384sum bin/$(BIN_NAME)
+	tar -czf $(BIN_NAME).tar.gz bin/$(BIN_NAME)
 
 clean-bin:
 	rm -Rf bin
