@@ -35,7 +35,7 @@ script:
   - sudo -E bash -c "PATH=$HOME/gopath/bin:$PATH GOPATH=/home/travis/gopath make test"
 
 before_deploy:
-  - make release
+  - sudo -E bash -c "PATH=$HOME/gopath/bin:$PATH GOPATH=/home/travis/gopath make release"
 
 deploy:
   provider: releases
