@@ -1,8 +1,11 @@
 BIN_NAME=zfs-freight
 GO=$(shell which go)
+VERSION=v$(shell cat .semver)
 
 debug:
 	@echo $(GO)
+	@echo $(BIN_NAME)
+	@echo $(VERSION)
 
 test: clean-test
 	dd if=/dev/zero of=$(CURDIR)/test.img bs=1 count=0 seek=2G
