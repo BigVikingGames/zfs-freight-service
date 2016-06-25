@@ -6,6 +6,8 @@ __ZFS Freight Service__ is a Docker volume plugin that allows you to create and 
 based heavily off [CWSpear/local-persist](https://github.com/CWSpear/local-persist) and currently
 only supports single nodes. Basic implementation of the volume API should be complete. The eventual goal is to provide a robust ZFS-based volume manager for Docker clusters.
 
+It's worth noting that ZFS slices created by this plugin are __not destroyed__ when a volume is removed. This also means that you will get an error if you attempt to create the same named volume again.
+
 ## Install
 
 ```
