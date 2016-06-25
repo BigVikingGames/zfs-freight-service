@@ -23,7 +23,7 @@ clean-test:
 
 binary: clean-bin
 	$(GO) build -o bin/$(BIN_NAME) -v
-	chmod +x o bin/$(BIN_NAME)
+	chmod +x bin/$(BIN_NAME)
 
 release: binary
 	sha384sum bin/$(BIN_NAME)
