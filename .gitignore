@@ -6,3 +6,4 @@ pkg
 bin
 *.img
 coverage.out
+zfs-freight.tar.gz
