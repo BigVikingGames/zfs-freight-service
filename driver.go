@@ -134,6 +134,10 @@ func (driver ZfsVolumeDriver) Path(req volume.Request) volume.Response {
 	return volume.Response{Mountpoint: vol.Mountpoint}
 }
 
+func (driver ZfsVolumeDriver) Capabilities(req volume.Request) volume.Response {
+	return volume.Response{Capabilities: volume.Capability{Scope: "local"}}
+}
+
 func (driver ZfsVolumeDriver) exists(name string) bool {
 	return driver.volumes[name] != ""
 }
